@@ -1,2 +1,5 @@
 SLURM_JOBID: 9982902
 CUDA_VISIBLE_DEVICES: 0
+CUDA available: True
+Device name: Tesla V100-PCIE-32GB
+Downloading dataset: http://rail.eecs.berkeley.edu/datasets/offline_rl/gym_mujoco_v2/halfcheetah_medium_expert-v2.hdf5 to /d4rl_datasets/halfcheetah_medium_expert-v2.hdf5

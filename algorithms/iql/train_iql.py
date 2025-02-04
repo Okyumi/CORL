@@ -182,16 +182,33 @@ def set_seed(
 
 
 def wandb_init(config: dict) -> None:
-    wandb.login(key="569ce0cbd5d7c96161dc36a682a88a18bd3f27dd") # yd2247
+    wandb.login(key="569ce0cbd5d7c96161dc36a682a88a18bd3f27dd")
+    
+    # Validation
+    valid_approaches = ["original", "naive", "difference"]
+    if config["reward_approach"] not in valid_approaches:
+        raise ValueError(f"Invalid reward_approach: {config['reward_approach']}. Must be one of {valid_approaches}")
+
+    # Construct identifiers
+    env_base = config['env'].split('-')[0]
+    method_id = f"{config['reward_approach']}-expert{config['expert_pct']:.1f}"
+    
     wandb.init(
         config=config,
-        project=config["project"],
-        group=f"{config['env']}-CompareRewards",  # yd2247
-        name=config["name"],
-        id=str(uuid.uuid4()),
+        project="CORL",
+        group=f"{env_base}-CompareRewards",  # Parent group: environment-level comparison
+        job_type=method_id,                   # Child group: method variant (reward approach + expert pct)
+        tags=[env_base, config['reward_approach'], f"seed{config['seed']}"],
+        name=f"IQL-{method_id}-{env_base}-seed{config['seed']}",
+        id=f"{env_base}-{method_id}-seed{config['seed']}",  # Unique ID with seed
+        settings=wandb.Settings(start_method="thread"),
     )
+    
+    # Custom metric grouping
+    wandb.define_metric(f"{env_base}/*", step_metric="timestep")
+    wandb.run.summary["reward_approach"] = config["reward_approach"]
+    wandb.run.summary["expert_pct"] = config["expert_pct"]
     wandb.run.save()
-
 
 @torch.no_grad()
 def eval_actor(
@@ -641,9 +658,28 @@ def train(config: TrainConfig):
                     trainer.state_dict(),
                     os.path.join(config.checkpoints_path, f"checkpoint_{t}.pt"),
                 )
-            wandb.log(
-                {"d4rl_normalized_score": normalized_eval_score}, step=trainer.total_it
-            )
+            # WandB logging with grouping
+            log_data = {
+                "group": config.expert_pct,  # Primary grouping for expert percentage
+                "seed": config.seed,
+                "env": config.env.split('-')[0],
+                "reward_approach": config.reward_approach,
+                "d4rl_normalized_score": normalized_eval_score,
+                "eval_score": eval_score,
+                "timestep": trainer.total_it,
+                # Add training metrics from log_dict
+                **log_dict
+            }
+            
+            # Add Q/V values if available
+            if hasattr(trainer, 'qf'):
+                q1, q2 = trainer.qf.both(batch[0], batch[1])
+                log_data.update({
+                    "q1_value": q1.mean().item(),
+                    "q2_value": q2.mean().item()
+                })
+            
+            wandb.log(log_data, step=trainer.total_it)
 
 
 if __name__ == "__main__":

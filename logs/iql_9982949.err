@@ -1,0 +1,32 @@
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+/share/apps/NYUAD5/Modules/4.6.1//init/bash: line 37: /usr/bin/tclsh: No such file or directory
+pybullet build time: May 20 2022 19:44:17
+Warning: Flow failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'flow'
+Warning: CARLA failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'carla'
+/opt/conda/lib/python3.8/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(
+load datafile:   0%|          | 0/9 [00:00<?, ?it/s]load datafile:  11%|█         | 1/9 [00:00<00:03,  2.29it/s]load datafile:  33%|███▎      | 3/9 [00:01<00:02,  2.27it/s]load datafile:  44%|████▍     | 4/9 [00:02<00:02,  1.76it/s]load datafile:  56%|█████▌    | 5/9 [00:03<00:02,  1.40it/s]load datafile:  67%|██████▋   | 6/9 [00:04<00:02,  1.23it/s]load datafile: 100%|██████████| 9/9 [00:04<00:00,  2.13it/s]
+wandb: Currently logged in as: yd2247 (nyuad_mmvc). Use `wandb login --relogin` to force relogin
+Traceback (most recent call last):
+  File "/CORL/algorithms/iql/train_iql.py", line 681, in <module>
+    train()
+  File "/opt/conda/lib/python3.8/site-packages/pyrallis/argparsing.py", line 158, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+  File "/CORL/algorithms/iql/train_iql.py", line 624, in train
+    wandb_init(asdict(config))
+  File "/CORL/algorithms/iql/train_iql.py", line 185, in wandb_init
+    wandb.login(key="your-key")
+  File "/opt/conda/lib/python3.8/site-packages/wandb/sdk/wandb_login.py", line 77, in login
+    configured = _login(**kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/wandb/sdk/wandb_login.py", line 292, in _login
+    wlogin.configure_api_key(key)
+  File "/opt/conda/lib/python3.8/site-packages/wandb/sdk/wandb_login.py", line 176, in configure_api_key
+    apikey.write_key(self._settings, key)
+  File "/opt/conda/lib/python3.8/site-packages/wandb/sdk/lib/apikey.py", line 222, in write_key
+    raise ValueError("API key must be 40 characters long, yours was %s" % len(key))
+ValueError: API key must be 40 characters long, yours was 8

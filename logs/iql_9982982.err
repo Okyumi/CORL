@@ -1,0 +1,6 @@
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+/share/apps/NYUAD5/Modules/4.6.1//init/bash: line 37: /usr/bin/tclsh: No such file or directory
+slurmstepd: error: *** JOB 9982982 ON dn002 CANCELLED AT 2025-02-04T18:34:38 ***

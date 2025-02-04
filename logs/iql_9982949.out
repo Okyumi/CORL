@@ -1,0 +1,9 @@
+SLURM_JOBID: 9982949
+CUDA_VISIBLE_DEVICES: 0
+CUDA available: True
+Device name: Tesla V100-PCIE-32GB
+Dataset size: 1998000
+Checkpoints path: /scratch/yd2247/CORL/results/iql_experiments/IQL_original_halfcheetah-medium-expert-v2_0/IQL-halfcheetah-medium-expert-v2-a8b5b2ec
+---------------------------------------
+Training IQL, Env: halfcheetah-medium-expert-v2, Seed: 0
+---------------------------------------

@@ -10,16 +10,16 @@ Warning: CARLA failed to import. Set the environment variable D4RL_SUPPRESS_IMPO
 No module named 'carla'
 /opt/conda/lib/python3.8/site-packages/gym/spaces/box.py:73: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
   logger.warn(
-load datafile:   0%|          | 0/9 [00:00<?, ?it/s]load datafile:  11%|█         | 1/9 [00:00<00:03,  2.16it/s]load datafile:  33%|███▎      | 3/9 [00:01<00:03,  1.87it/s]load datafile:  44%|████▍     | 4/9 [00:02<00:03,  1.42it/s]load datafile:  56%|█████▌    | 5/9 [00:03<00:03,  1.12it/s]load datafile:  67%|██████▋   | 6/9 [00:05<00:03,  1.02s/it]load datafile: 100%|██████████| 9/9 [00:05<00:00,  1.71it/s]
+load datafile:   0%|          | 0/9 [00:00<?, ?it/s]load datafile:  11%|█         | 1/9 [00:00<00:03,  2.11it/s]load datafile:  33%|███▎      | 3/9 [00:01<00:03,  1.82it/s]load datafile:  44%|████▍     | 4/9 [00:02<00:03,  1.38it/s]load datafile:  56%|█████▌    | 5/9 [00:03<00:03,  1.09it/s]load datafile:  67%|██████▋   | 6/9 [00:05<00:03,  1.05s/it]load datafile: 100%|██████████| 9/9 [00:05<00:00,  1.66it/s]
 wandb: Currently logged in as: yd2247 (nyuad_mmvc). Use `wandb login --relogin` to force relogin
 wandb: Appending key for api.wandb.ai to your netrc file: /home/yd2247/.netrc
 wandb: wandb version 0.19.5 is available!  To upgrade, please run:
 wandb:  $ pip install wandb --upgrade
 wandb: Tracking run with wandb version 0.15.0
-wandb: Run data is saved locally in /scratch/yd2247/CORL/algorithms/scripts/wandb/run-20250204_180032-16fc2e06-ac9d-41f2-a35a-83ca29b4366e
+wandb: Run data is saved locally in /scratch/yd2247/CORL/algorithms/scripts/wandb/run-20250204_183041-halfcheetah-naive-expert1.0-seed0
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run IQL-halfcheetah-medium-expert-v2-86013676
+wandb: Syncing run IQL-naive-expert1.0-halfcheetah-seed0
 wandb: ⭐️ View project at https://wandb.ai/nyuad_mmvc/CORL
-wandb: 🚀 View run at https://wandb.ai/nyuad_mmvc/CORL/runs/16fc2e06-ac9d-41f2-a35a-83ca29b4366e
+wandb: 🚀 View run at https://wandb.ai/nyuad_mmvc/CORL/runs/halfcheetah-naive-expert1.0-seed0
 wandb: WARNING Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
-slurmstepd: error: *** JOB 9982902 ON dn007 CANCELLED AT 2025-02-04T18:34:08 ***
+slurmstepd: error: *** JOB 9982970 ON dn001 CANCELLED AT 2025-02-04T18:34:28 ***
