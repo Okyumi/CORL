@@ -1,0 +1,4 @@
+SLURM_JOBID: 9982886
+CUDA_VISIBLE_DEVICES: 0
+CUDA available: True
+Device name: Tesla V100-PCIE-32GB

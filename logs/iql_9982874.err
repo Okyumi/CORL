@@ -1,0 +1,27 @@
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+/share/apps/NYUAD5/Modules/4.6.1//init/bash: line 37: /usr/bin/tclsh: No such file or directory
+Traceback (most recent call last):
+  File "/CORL/algorithms/iql/train_iql.py", line 13, in <module>
+    import d4rl
+  File "/workspace/D4RL/d4rl/__init__.py", line 14, in <module>
+    import d4rl.locomotion
+  File "/workspace/D4RL/d4rl/locomotion/__init__.py", line 2, in <module>
+    from d4rl.locomotion import ant
+  File "/workspace/D4RL/d4rl/locomotion/ant.py", line 20, in <module>
+    import mujoco_py
+  File "/opt/conda/lib/python3.8/site-packages/mujoco_py/__init__.py", line 2, in <module>
+    from mujoco_py.builder import cymj, ignore_mujoco_warnings, functions, MujocoException
+  File "/opt/conda/lib/python3.8/site-packages/mujoco_py/builder.py", line 504, in <module>
+    cymj = load_cython_ext(mujoco_path)
+  File "/opt/conda/lib/python3.8/site-packages/mujoco_py/builder.py", line 76, in load_cython_ext
+    _ensure_set_env_var("LD_LIBRARY_PATH", get_nvidia_lib_dir())
+  File "/opt/conda/lib/python3.8/site-packages/mujoco_py/builder.py", line 120, in _ensure_set_env_var
+    raise Exception("\nMissing path to your environment variable. \n"
+Exception: 
+Missing path to your environment variable. 
+Current values LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/workspace/.mujoco/mujoco210/bin:/.singularity.d/libs:/home/yd2247/.mujoco/mujoco210/bin
+Please add following line to .bashrc:
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia

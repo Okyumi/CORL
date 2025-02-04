@@ -1,0 +1,6 @@
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+WARNING: skipping mount of /scratch/yd2247/.d4rl/datasets: stat /scratch/yd2247/.d4rl/datasets: no such file or directory
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+FATAL:   container creation failed: mount /scratch/yd2247/.d4rl/datasets->/d4rl_datasets error: while mounting /scratch/yd2247/.d4rl/datasets: mount source /scratch/yd2247/.d4rl/datasets doesn't exist

@@ -1,0 +1,21 @@
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+WARNING: underlay of /etc/localtime required more than 50 (120) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (454) bind mounts
+/share/apps/NYUAD5/Modules/4.6.1//init/bash: line 37: /usr/bin/tclsh: No such file or directory
+pybullet build time: May 20 2022 19:44:17
+Warning: Flow failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'flow'
+Warning: CARLA failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'carla'
+usage: train_iql.py [-h] [--config_path str] [--reward_approach str]
+                    [--expert_pct str] [--device str] [--env str] [--seed str]
+                    [--eval_freq str] [--n_episodes str] [--max_timesteps str]
+                    [--checkpoints_path str] [--load_model str]
+                    [--buffer_size str] [--batch_size str] [--discount str]
+                    [--tau str] [--beta str] [--iql_tau str]
+                    [--iql_deterministic str] [--normalize str]
+                    [--normalize_reward str] [--vf_lr str] [--qf_lr str]
+                    [--actor_lr str] [--actor_dropout str] [--project str]
+                    [--group str] [--name str]
+train_iql.py: error: unrecognized arguments: --wandb_entity yd2247

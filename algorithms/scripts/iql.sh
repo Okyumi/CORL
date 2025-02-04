@@ -5,8 +5,8 @@
 #SBATCH --mem=32GB
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=yd2247@nyu.edu
-#SBATCH --output=../../logs/iql.out
-#SBATCH --error=../../logs/iql.err
+#SBATCH --output=../../logs/iql_%j.out
+#SBATCH --error=../../logs/iql_%j.err
 #SBATCH --partition=nvidia
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
@@ -14,8 +14,8 @@
 # --------------------- Your Paths ---------------------
 export CORL_ROOT="/scratch/yd2247/CORL"
 export CODE_DIR="${CORL_ROOT}/algorithms/iql"
-export DATASET_DIR="/scratch/yd2247/.d4rl/datasets"
-export WANDB_ENTITY="yd2247"
+export DATASET_DIR="/scratch/yd2247/rl_paradigm/gym/data/.d4rl/datasets"
+#export WANDB_ENTITY="yd2247"
 # ------------------------------------------------------
 
 echo "SLURM_JOBID: $SLURM_JOBID"
@@ -52,6 +52,7 @@ singularity exec --nv \
 # Set Python and library paths
 export PYTHONPATH=$PYTHONPATH:/CORL
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/yd2247/.mujoco/mujoco210/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
 export D4RL_DATASET_DIR=/d4rl_datasets
 
 # Run training script
@@ -60,6 +61,5 @@ python /CORL/algorithms/iql/train_iql.py \
     --reward_approach ${REWARD_APPROACH} \
     --expert_pct ${EXPERT_PCT} \
     --seed ${SEED} \
-    --wandb_entity ${WANDB_ENTITY} \
     --checkpoints_path ${OUTPUT_DIR}
 '
